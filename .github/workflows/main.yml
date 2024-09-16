@@ -25,4 +25,4 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: false
-          tags: pablokbs/prueba-gha:${{ github.sha }}
+          tags: jazabachem/prueba-gha:${{ github.sha }}
