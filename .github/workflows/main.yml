@@ -24,7 +24,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: jazabachem/prueba-gha:${{ github.sha }}
+          tags: 000165553/jazabachem:${{ github.sha }}
 
   deploy-to-cluster:
     name: deploy to cluster
@@ -36,7 +36,7 @@ jobs:
       uses: steebchen/kubectl@v2.0.0
       with:
         config: ${{ secrets.KUBE_CONFIG_DATA }}
-        command: -n prueba set image --record deployment/prueba-gha prueba-gha=jazabachem/prueba-gha:${{ github.sha }}
+        command: -n prueba set image --record deployment/prueba-gha prueba-gha=000165553/jazabachem-gha:${{ github.sha }}
     -
       name: verify deployment
       uses: steebchen/kubectl@v2.0.0
