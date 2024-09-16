@@ -5,7 +5,7 @@ on:
 name: CD
 jobs:
   deploy-to-dockerhub:
-    runs-on: ubuntu-latest #gh
+    runs-on: ubuntu-latest #
     steps:
       -
         name: Set up QEMU
@@ -36,7 +36,7 @@ jobs:
       uses: steebchen/kubectl@v2.0.0
       with:
         config: ${{ secrets.KUBE_CONFIG_DATA }}
-        command: -n develop set image --record deployment/prueba-gha prueba-gha=000165553/jazabachem-gha:${{ github.sha }}
+        command: -n develop set image --record deployment/prueba-gha prueba-gha=000165553/jazabachem:${{ github.sha }}
     -
       name: verify deployment
       uses: steebchen/kubectl@v2.0.0
