@@ -5,7 +5,7 @@ on:
 name: CD
 jobs:
   deploy-to-dockerhub:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #gh
     steps:
       -
         name: Set up QEMU
